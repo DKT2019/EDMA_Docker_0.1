@@ -62,9 +62,9 @@ services:
       INFLUXDB_USER_PASSWORD: this_too_2
             
     ports:
-      - "8082:8082"
-      - "8086:8086"
-      - "8089:8089"
+      - "8083:8083"
+      - "8087:8087"
+      - "8090:8090"
     volumes:
       - influxData:/var/lib/influxdb
     networks: 
