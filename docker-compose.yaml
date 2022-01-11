@@ -10,8 +10,7 @@ services:
       - "1880:1880"
     volumes:
       - noderedData:/data
-    networks:
-      - edge
+    network_mode: host
  ##########################################################     
   grafana:
     build: ./grafana
@@ -22,8 +21,7 @@ services:
       - "3000:3000"
     volumes: 
       - grafanaData:/var/lib/grafana
-    networks:
-      - edge
+    network_mode: host
 ##########################################################      
   influxdb:
     build: ./influx
@@ -44,8 +42,7 @@ services:
       - "8089:8089"
     volumes:
       - influxData:/var/lib/influxdb
-    networks: 
-      - edge
+    network_mode: host
 ##########################################################     
 
   mosquitto:
@@ -66,12 +63,7 @@ services:
       - /EDMA_Docker_0.1/mqtt/data:/mosquitto/data
       - /EDMA_Docker_0.1/mqtt/log:/mosquitto/log    
       
-    networks: 
-      - edge           
-##########################################################    
-#Create internal link network for Containers
-networks:
-  edge:
+    network_mode: host          
 ##########################################################
 #Create Volumes for persistent Storage
 volumes:
