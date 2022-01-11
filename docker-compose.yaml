@@ -42,7 +42,9 @@ services:
       - "8086:8086"
       - "8089:8089"
     volumes:
-      - influxData:/var/lib/influxdb
+       - influxData:/docker/influxdb/data
+
+#      - influxData:/var/lib/influxdb
     networks: 
       - edge
 ##########################################################     
